@@ -9,22 +9,13 @@
 
 int print_last_digit(int c)
 {
-	if (c < 0)
-	{
-		int abs;
-		int last_digit_abs;
+	int last_digit;
 
-		abs = c * -1;
-		last_digit_abs = abs % 10;
-		_putchar(last_digit_abs + '0');
-		return (last_digit_abs);
-	}
-	else
+	last_digit = c % 10;
+	if (last_digit < 0)
 	{
-		int last_digit;
-
-		last_digit = c % 10;
-		_putchar(last_digit + '0');
-		return (last_digit);
+		last_digit = last_digit * -1;
 	}
+	_putchar(last_digit + '0');
+	return (last_digit);
 }
